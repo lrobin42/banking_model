@@ -11,7 +11,7 @@ fn main() {
         routing_number: 50_498_023,
         account_number: 530_671_356_593_614_818,
         cash_balance: 38_346.45,
-        positions: accounts::Positions::None,
+        positions: None,
     };
 
     let mut savings_b = Account {
@@ -20,7 +20,7 @@ fn main() {
         routing_number: 87_491_858,
         account_number: 299_283_561_701_187_767,
         cash_balance: 57_652.66,
-        positions: accounts::Positions::None,
+        positions: None,
     };
 
     //savings_a withdrawal
@@ -48,7 +48,7 @@ fn main() {
         "Post-transfer Marcus - {:.2}, Nathalia - {:.2}",
         savings_a.cash_balance, savings_b.cash_balance
     );
-    savings_b.check_balance();
+    println!("{}", savings_b.cash_balance);
 }
 //TODO
 // creating new accounts
