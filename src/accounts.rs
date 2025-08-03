@@ -73,7 +73,8 @@ impl Account {
                 let shares_bought = cash_amount / share_price;
                 self.cash_balance -= cash_amount;
 
-                //unpack unwrap the hashmap from option, and update the entry
+                //if the account already has positions, check if the positions already include this
+                //security
                 if self.positions.is_some() {
                     let mut unpacked_positions: HashMap<String, f64> =
                         self.positions.as_mut().unwrap().clone();
@@ -81,9 +82,12 @@ impl Account {
                         let new_position_shares = unpacked_positions[ticker] + shares_bought;
                         unpacked_positions.insert(ticker.to_string(), new_position_shares);
                         self.positions = Some(unpacked_positions.clone());
+                    } else {
+                        unpacked_positions.insert(ticker.to_string(), shares_bought);
+                        selt.positions = Some(unpacked_positions)
                     }
                     //if account_holder doesn't hold any positions, start a new one
-                    else if self.positions.is_none() || !unpacked_positions.contains_key(ticker) {
+                else if self.positions.is_none() || !unpacked_positions.contains_key(ticker) {
                         let mut investments: HashMap<String, f64> = HashMap::new();
                         investments.insert("ticker".to_string(), shares_bought);
                         self.positions = Some(investments);
