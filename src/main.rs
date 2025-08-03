@@ -50,13 +50,3 @@ fn main() {
     );
     println!("Nathalia's final balance: ${}", savings_b.cash_balance);
 }
-//TODO
-// creating new accounts
-// implement rust crate for decimal math
-// Build out enum for stock prices, shares, security type, and security type
-//implement  functions for security_trades
-// implement error handling for insufficient funds, ore incorrect routing numbers
-
-//Bank Account Simulator: Model accounts with structs,
-// and use enums for transaction types (Deposit, Withdraw, Transfer).
-// This helps you define methods (impl blocks) and match on transaction requests.
