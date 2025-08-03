@@ -48,7 +48,7 @@ fn main() {
         "Post-transfer Marcus - {:.2}, Nathalia - {:.2}",
         savings_a.cash_balance, savings_b.cash_balance
     );
-    println!("{}", savings_b.cash_balance);
+    println!("Nathalia's final balance: ${}", savings_b.cash_balance);
 }
 //TODO
 // creating new accounts
